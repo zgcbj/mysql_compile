@@ -6,7 +6,6 @@ RUN git clone https://github.com/ysaicll/mysql-8.0.3-rc.git
 RUN yum install -y autoconf automake m4 libtool make cmake bison gcc libncurses5-dev
 RUN groupadd mysql && useradd -r -g mysql -s /bin/false mysql
 RUN mkdir /soft && \
-    chown erge /soft && \
     wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-8.0.11.tar.gz && \
     tar zxvf mysql-boost-8.0.11.tar.gz && \
     cd mysql-8.0.11 && \
