@@ -17,5 +17,4 @@ RUN cd mysql-8.0.3-rc/ && mkdir build && cd build && \
 -DDEFAULT_COLLATION=utf8mb4_general_ci \
 -DENABLED_LOCAL_INFILE=1 \
 -DEXTRA_CHARSETS=all \
--DWITH_DEBUG=1
-
+-DWITH_DEBUG=1 && make && make install
