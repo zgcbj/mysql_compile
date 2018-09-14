@@ -4,8 +4,6 @@ RUN yum update -y \
 	&& yum install -y git  wget
 RUN git clone https://github.com/ysaicll/mysql-8.0.3-rc.git
 RUN yum install -y autoconf automake m4 libtool make cmake bison gcc 
-RUN wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
-RUN tar -xzvf boost_1_66_0.tar.gz -C  /usr/local/
 RUN groupadd mysql && useradd -r -g mysql -s /bin/false mysql
 RUN mkdir -p /mysqlcmp/build && mv mysql-8.0.3-rc /mysqlcmp/ && cd /mysqlcmp/build && \
     cmake ../mysql-8.0.3-rc -DWITH_DEBUG=1 \
@@ -17,4 +15,5 @@ RUN mkdir -p /mysqlcmp/build && mv mysql-8.0.3-rc /mysqlcmp/ && cd /mysqlcmp/bui
 -DDEFAULT_COLLATION=utf8mb4_general_ci \
 -DENABLED_LOCAL_INFILE=1 \
 -DEXTRA_CHARSETS=all \
+-DDOWNLOAD_BOOST=1 \
 -DWITH_DEBUG=1 && make && make install
