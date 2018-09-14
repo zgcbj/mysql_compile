@@ -20,7 +20,7 @@ RUN mkdir /soft && \
 -DDEFAULT_CHARSET=utf8mb4 \
 -DWITH_DEBUG=0 \
 -DMYSQL_MAINTAINER_MODE=0 \
--DWITH_BOOST=./boost && \
+-DWITH_BOOST=./boost \
 -DWITH_DEBUG=1 && \
 make && \
 make install
