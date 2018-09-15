@@ -1,8 +1,5 @@
-FROM bjzgc/mysql_compile:mysql8_compile_env
-RUN mkdir /soft && \
-    wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-8.0.11.tar.gz && \
-    tar zxvf mysql-boost-8.0.11.tar.gz && \
-    cd mysql-8.0.11 && \
+FROM bjzgc/mysql_compile:mysql8_compile_env_with_code
+RUN cd mysql-8.0.11 && \
     cmake . -DCMAKE_INSTALL_PREFIX=/soft/mysql \
     -DMYSQL_DATADIR=/soft/mysql/data \
 -DSYSCONFDIR=/etc \
