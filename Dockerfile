@@ -19,5 +19,5 @@ RUN mkdir /soft && \
     -DWITH_BOOST=./boost \
     -DWITH_DEBUG=1 
 RUN cd mysql-8.0.11 && \
-make && \
+make -j32 && \
 make install
