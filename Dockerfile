@@ -13,5 +13,3 @@ RUN cd mysql-8.0.11 && \
 -DMYSQL_MAINTAINER_MODE=0 \
 -DWITH_BOOST=./boost \
 -DWITH_DEBUG=1 && \
-make && \
-make install
