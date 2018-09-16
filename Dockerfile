@@ -1,17 +1,4 @@
-FROM bjzgc/mysql_compile:mysql8_compile_env_with_code
+FROM bjzgc/mysql_compile:mysql8_compile_step1
 RUN cd mysql-8.0.11 && \
-    cmake . -DCMAKE_INSTALL_PREFIX=/soft/mysql \
-    -DMYSQL_DATADIR=/soft/mysql/data \
--DSYSCONFDIR=/etc \
--DWITH_MYISAM_STORAGE_ENGINE=1 \
--DWITH_INNOBASE_STORAGE_ENGINE=1 \
--DWITH_ARCHIVE_STORAGE_ENGINE=1 \
--DENABLED_LOCAL_INFILE=1 \
--DENABLE_DOWNLOADS=1  \
--DDEFAULT_CHARSET=utf8mb4 \
--DWITH_DEBUG=0 \
--DMYSQL_MAINTAINER_MODE=0 \
--DWITH_BOOST=./boost \
--DWITH_DEBUG=1 && \
 make && \
 make install
