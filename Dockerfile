@@ -1,5 +1,5 @@
 FROM bjzgc/mysql_compile:mysql8_compile_env
 RUN mkdir /soft && \
-    wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-8.0.11.tar.gz && \
+    wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.25.tar.gz && \
     tar zxvf mysql-boost-8.0.11.tar.gz 
 
